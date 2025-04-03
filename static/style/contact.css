@@ -14,8 +14,13 @@ body {
     display: block;
     padding: 0;
 }
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 .container {
+    max-width: 90%;
     width: 400px;
     padding: 20px;
     border-radius: 10px;
@@ -65,5 +70,12 @@ p {
 }
 
 .btn:hover {
-    background-color: var(--btn-hover);
+    background-color: var(--btn-hover);   
 }
+@media (max-width: 768px) {
+.container {
+    max-width: 80%;
+    padding: 15px; 
+    margin: 80px auto;
+    margin-top: 100px;
+}}

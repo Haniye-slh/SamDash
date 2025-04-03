@@ -303,7 +303,7 @@ def confirm_payment():
     product_id = request.form.get("product_id")
     quantity = int(request.form.get("quantity"))
     address = request.form.get("address")
-    card_number = request.form.get("card_number").replace("-", "")  # حذف "-"
+    card_number = request.form.get("card_number").replace("-", "")
     cvv = request.form.get("cvv")
     expiry_date = request.form.get("expiry_date")
 
@@ -319,7 +319,7 @@ def confirm_payment():
 
     if len(card_number) != 16 or not card_number.isdigit():
         flash("Your card was rejected!", "danger")
-        return redirect(url_for("product", product_id=product_id))  # اصلاح شد
+        return redirect(url_for("product", product_id=product_id)) 
 
     if not expiry_date or len(expiry_date) != 5:
         flash("Invalid expiry date!", "danger")

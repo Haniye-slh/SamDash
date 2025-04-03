@@ -3,6 +3,8 @@
 <header>
     <nav class="topbar">
         <div class="brand">MyShop</div>
+        <div class="hamburger">☰</div>
+
         <ul class="menu">
             <li><a href="{{ url_for('home_page') }}">Home</a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
@@ -23,7 +25,21 @@
                 <a href="{{ url_for('sign_up') }}" class="button signup-btn">Sign Up</a>
             {% endif %}
         </div>
-        
-        
     </nav>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".menu");
+        const actions = document.querySelector(".actions");
+    
+        if (hamburger && menu && actions) {
+            hamburger.addEventListener("click", function () {
+                menu.classList.toggle("active");
+                actions.classList.toggle("active");
+            });
+        } else {
+            console.error("ERORR");
+        }
+    });  
+    </script>
 </header>

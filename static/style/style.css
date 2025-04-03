@@ -97,6 +97,6 @@ color: var(--font-color);
 }
 
 @media (max-width:799px) {
-
-    .bg-pic{height: 200px;}
+    .bg-pic{height: 200px;
+        margin-top: 80px;}
 }

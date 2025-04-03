@@ -38,3 +38,22 @@ button:hover {
     color: green;
     font-weight: bold;
 }
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    th, td {
+        font-size: 10.5px;
+        padding: 8px;
+    }
+    button {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    table {
+        width: 100%;
+    }
+}
