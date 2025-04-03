@@ -1,0 +1,30 @@
+:root {
+    --secondary: #292929;
+    --bg: #0f0e0e;
+    --font-color: #ffffff;
+    --font-color2: #9c9c9c;
+    --btn-bg: #007bff;
+    --btn-hover: #0056b3;
+}
+
+body {
+    direction: rtl;
+    text-align: left;
+    font-size: 20px;
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 15px;
+    margin: 10px auto;
+}
+
+button {
+    border-radius: 15px;
+    background-color: var(--btn-hover);
+    margin-bottom: 10px;
+    border: 1px solid var(--btn-hover);
+    padding: 4px 10px 4px 10px;
+}

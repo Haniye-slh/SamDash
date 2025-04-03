@@ -1,0 +1,127 @@
+:root {
+    --secondary: #292929;
+    --bg: #0f0e0e; 
+    --font-color: #ffffff; 
+    --font-color2: #9c9c9c;
+    --btn-bg: #007bff;    
+    --btn-hover: #0056b3; 
+    --comment-font: #92c0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--font-color);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.box {
+    width: 400px;
+    padding: 20px;
+    background: var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.product-info img {
+    width: 140px;
+    border-radius: 10px;
+}
+
+.text-container {
+    text-align: left;
+    flex: 1;
+    padding-right: 15px;
+}
+
+.text-container h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.text-container p {
+    font-size: 14px;
+    color: var(--font-color2);
+}
+
+.input, .input2 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--btn-bg);
+    color: var(--font-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+}
+
+.comments-section {
+    width: 400px;
+    padding: 15px;
+    background: var(--secondary);
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.comments-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    padding: 10px;
+    border-bottom: 1px solid var(--comment-font);
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.username {
+    font-weight: bold;
+    color: var(--comment-font);
+}
+
+.user-comment {
+    font-size: 14px;
+    color: var(--font-color2);
+    margin-top: 5px;
+}

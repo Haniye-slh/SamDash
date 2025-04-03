@@ -1,0 +1,43 @@
+:root {
+    --secondary: #292929;
+    --bg: #0f0e0e; 
+    --font-color: #ffffff; 
+    --font-color2: #9c9c9c;
+    --btn-bg: #007bff;    
+    --btn-hover: #0056b3; 
+}
+.footer {
+    background-color: var(--secondary);
+    color: var(--font-color);
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.footer .social-icons a {
+    color: var(--font-color);
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.copyright {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--font-color2);
+}
+
+.developer_name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--font-color2);
+}
+
+.footer .social-icons a:hover {
+    color: var(--btn-hover);
+}
+
+@media (max-width: 600px) {
+    .footer {
+        font-size: 14px;
+    }
+}

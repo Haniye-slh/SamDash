@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/orders.css') }}">
+    <title>My Orders</title>
+<body>
+    <header>
+        {% include "header.html" %}
+    </header>
+    <div class="container">
+        <h2>My Orders</h2>
+        {% if orders %}
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                </tr>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.product.name }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.address }}</td>
+                    <td>{{ order.status }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>You have no orders yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

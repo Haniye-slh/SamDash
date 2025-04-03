@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/contact.css') }}">
+    <title>Contact</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="container">
+    <h1>CONTACT</h1>
+    <p>If you have any problem with payment or have any question, send us an email and we will answer as soon as
+        possible.</p>
+        
+    <form action="/contact" method="POST">
+        <input type="text" id="your_message" name="your_message" placeholder="Enter your message" class="input" required>
+        <input type="email" id="your_email" name="your_email" placeholder="Enter your email" class="input" required>
+        <input type="submit" class="btn">
+    </form>
+    
+</div>
+    {% include "footer.html" %}
+</body>
+
+</html>

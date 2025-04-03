@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="container div">
+        <span class="login">REGISTER USER</span>
+        <form action="/sign-up" method="POST">
+            <div class="row">
+                <img src="static/images/mail.png">
+                <input type="text" name="email" placeholder="email" class="input"><br>
+                {% if error == "Email already exists" %}
+                <p style="color: red;">{{ error }}</p>
+                {% endif %}
+            </div>
+            <div class="row">
+                <img src="static/images/user.png">
+                <input type="text" name="username" placeholder="username" class="input"><br>
+                {% if error == "Username already exists" %}
+                <p style="color: red;">{{ error }}</p>
+                {% endif %}
+            </div>
+            <div class="row">
+                <img src="static/images/pass.png">
+                <input type="password" name="password" placeholder="password" class="input"><br>
+            </div>
+            {% if error == "Please fill in all fields" %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+            <input type="submit" value="Register" class="btn">
+        </form>
+
+        <a href="{{url_for('login')}}" class="link">already have an account?</a>
+    </div>
+
+</body>
+
+</html>

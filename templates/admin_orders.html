@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/admin_orders.css') }}">
+</head>
+<body>
+    {% include "header.html" %}
+
+    <h1>ORDERS:</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Product</th>
+                <th>Num</th>
+                <th>Address</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.username }}</td>
+                <td>{{ order.product.name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.address }}</td>
+                <td>{{ order.timestamp }}</td>
+                <td class="{% if order.status == 'Completed' %}done{% endif %}">
+                    {{ order.status }}
+                </td>
+                <td>
+                    {% if order.status != "Completed" %}
+                    <form method="POST">
+                        <input type="hidden" name="order_id" value="{{ order.id }}">
+                        <button type="submit">Mark as Completed</button>
+                    </form>
+                    {% else %}
+                    ✔ Done
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

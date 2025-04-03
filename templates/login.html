@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="container div">
+        <span class="login">LOGIN USER</span>
+        <form action="/login" method="POST">
+            <div class="row">
+                <img src="static/images/user.png" ><input type="text" name="username" placeholder="unsername"
+                    class="input"><br>
+            </div>
+            <div class="row">
+                <img src="static/images/pass.png"><input type="password" name="password" placeholder="password"
+                    class="input"><br>
+            </div>
+            <input type="submit" class="btn">
+        </form>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <a href="{{url_for('sign_up')}}" class="link">don't have an account? </a>
+    </div>
+</body>
+
+</html>

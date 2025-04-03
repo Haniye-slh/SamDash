@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
+
+<header>
+    <nav class="topbar">
+        <div class="brand">MyShop</div>
+        <ul class="menu">
+            <li><a href="{{ url_for('home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+
+        <div class="actions">
+            {% if session["username"] %}
+                <span class="user-name">Welcome, {{ session["username"] }}</span>
+                {% if session["role"] == "admin" %}
+                    <a href="{{ url_for('admin_dashboard') }}" class="button admin-btn">Admin Panel</a>
+                {% elif session["role"] == "user" %}
+                    <a href="{{ url_for('my_orders') }}" class="button orders-btn">My Orders</a>
+                {% endif %}
+                <a href="{{ url_for('logout') }}" class="button logout-btn">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="button login-btn">Login</a>
+                <a href="{{ url_for('sign_up') }}" class="button signup-btn">Sign Up</a>
+            {% endif %}
+        </div>
+        
+        
+    </nav>
+</header>
