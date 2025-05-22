@@ -41,7 +41,7 @@ app.jinja_env.globals['now'] = datetime.datetime.now
 @app.route("/")
 def home_page():
     products = Product.query.all()
-    return render_template("index.html", username=session.get("username"), products=products)
+    return render_template("index.html", username=session.get("username"), products=products, now=datetime.now().timestamp())
 
 @app.route("/sign-up", methods=["POST", "GET"])
 def sign_up():
