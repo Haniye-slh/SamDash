@@ -51,8 +51,8 @@
           {% endif %}
           <h3>{{ product.name }}</h3>
           <p>{{ product.price }}$</p>
-          <p>موجودی: {{ product.stock }}</p>
-          <a href="/product/{{ product.id }}" class="btn btn-primary mt-2">خرید</a>
+          <p>stock: {{ product.stock }}</p>
+          <a href="/product/{{ product.id }}" class="btn btn-primary">Buy Now</a>
         </div>
       </div>
       {% endfor %}
