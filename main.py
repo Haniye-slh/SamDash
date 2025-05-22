@@ -166,6 +166,7 @@ def admin_dashboard():
         if not name or not price or not stock:
             return render_template("admin.html", error="Please fill all fields", products=Product.query.all())
 
+        filename = None
         if image and allowed_file(image.filename):
             filename = secure_filename(image.filename)
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename).replace("\\", "/")
