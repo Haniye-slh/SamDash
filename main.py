@@ -1,6 +1,6 @@
 from flask import Flask, redirect, render_template, request, session, url_for, flash
 from flask_mail import Mail, Message
-from datetime import datetime
+import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from os import getenv
@@ -41,7 +41,7 @@ app.jinja_env.globals['now'] = datetime.datetime.now
 @app.route("/")
 def home_page():
     products = Product.query.all()
-    return render_template("index.html", username=session.get("username"), products=products, now=datetime.now().timestamp())
+    return render_template("index.html", username=session.get("username"), products=products)
 
 @app.route("/sign-up", methods=["POST", "GET"])
 def sign_up():
