@@ -1,6 +1,6 @@
 from flask import Flask, redirect, render_template, request, session, url_for, flash
 from flask_mail import Mail, Message
-import datetime
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from os import getenv
